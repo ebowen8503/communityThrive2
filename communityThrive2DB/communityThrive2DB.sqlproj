@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>communityThrive2DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{b9dd4875-a95d-4458-895a-a44bcc7076e1}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>communityThrive2DB</RootNamespace>
+    <AssemblyName>communityThrive2DB</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Schema" />
+    <Folder Include="StoredProcecdures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Schema\alterCt2Inventory191216.sql" />
+    <Build Include="Schema\alterCt2Item191216.sql" />
+    <Build Include="Schema\alterCt2Stock191216.sql" />
+    <Build Include="Schema\CreateTable stockItem.sql" />
+    <Build Include="Schema\ct2category.sql" />
+    <Build Include="Schema\ct2City.sql" />
+    <Build Include="Schema\ct2company.sql" />
+    <Build Include="Schema\ct2dontation.sql" />
+    <Build Include="Schema\ct2Event.sql" />
+    <Build Include="Schema\ct2EventType.sql" />
+    <Build Include="Schema\ct2Family.sql" />
+    <Build Include="Schema\ct2HouseholdInformation.sql" />
+    <Build Include="Schema\ct2Inventory.sql" />
+    <Build Include="Schema\ct2Item.sql" />
+    <Build Include="Schema\ct2Privileges.sql" />
+    <Build Include="Schema\ct2Receipt.sql" />
+    <Build Include="Schema\ct2Recipient.sql" />
+    <Build Include="Schema\ct2recipientAddressID.sql" />
+    <Build Include="Schema\ct2recipientDonationTracking.sql" />
+    <Build Include="Schema\ct2Role.sql" />
+    <Build Include="Schema\ct2RolePrivileges.sql" />
+    <Build Include="Schema\ct2State.sql" />
+    <Build Include="Schema\ct2Stock.sql" />
+    <Build Include="Schema\ct2User.sql" />
+    <Build Include="Schema\ct2UserRole.sql" />
+    <Build Include="Schema\ct2UserType.sql" />
+    <Build Include="Schema\DropConstraintCt2Stock.sql" />
+    <Build Include="Schema\DropConstraitCt2Inventory.sql" />
+    <Build Include="StoredProcecdures\sp_Createct2Category.sql" />
+    <Build Include="StoredProcecdures\sp_createct2Company.sql" />
+    <Build Include="StoredProcecdures\sp_createct2Donation.sql" />
+    <Build Include="StoredProcecdures\sp_Createct2FamilyMember.sql" />
+    <Build Include="StoredProcecdures\sp_Createct2Receipt.sql" />
+    <Build Include="StoredProcecdures\sp_createct2Recipient.sql" />
+    <Build Include="StoredProcecdures\sp_createct2User.sql" />
+    <Build Include="StoredProcecdures\sp_CreateEvent.sql" />
+    <Build Include="StoredProcecdures\sp_CreateInventory.sql" />
+    <Build Include="StoredProcecdures\sp_CreateInventoryItem.sql" />
+    <Build Include="StoredProcecdures\sp_ct2CreateGeoLocationCity.sql" />
+    <Build Include="StoredProcecdures\sp_ct2CreateGeoLocationState.sql" />
+    <Build Include="StoredProcecdures\sp_ct2CreateRoles.sql" />
+    <Build Include="StoredProcecdures\sp_ct2CreateStock.sql" />
+    <Build Include="StoredProcecdures\sp_ct2DeleteGeoLocationCity.sql" />
+    <Build Include="StoredProcecdures\sp_ct2DeleteGeoLocationState.sql" />
+    <Build Include="StoredProcecdures\sp_ct2DeleteRoles.sql" />
+    <Build Include="StoredProcecdures\sp_ct2DeleteStock.sql" />
+    <Build Include="StoredProcecdures\sp_ct2ReadRoles.sql" />
+    <Build Include="StoredProcecdures\sp_ct2ReadStock.sql" />
+    <Build Include="StoredProcecdures\sp_ct2UpdateGeoLocationCity.sql" />
+    <Build Include="StoredProcecdures\sp_ct2UpdateGeoLocationState.sql" />
+    <Build Include="StoredProcecdures\sp_ct2UpdateRoles.sql" />
+    <Build Include="StoredProcecdures\sp_ct2UpdateStock.sql" />
+    <Build Include="StoredProcecdures\sp_Deletect2Category.sql" />
+    <Build Include="StoredProcecdures\sp_deletect2Donation.sql" />
+    <Build Include="StoredProcecdures\sp_Deletect2Family.sql" />
+    <Build Include="StoredProcecdures\sp_Deletect2Receipt.sql" />
+    <Build Include="StoredProcecdures\sp_deletect2Recipient.sql" />
+    <Build Include="StoredProcecdures\sp_deletect2User.sql" />
+    <Build Include="StoredProcecdures\sp_deletectCompany.sql" />
+    <Build Include="StoredProcecdures\sp_DeleteEvent.sql" />
+    <Build Include="StoredProcecdures\sp_DeleteInventory.sql" />
+    <Build Include="StoredProcecdures\sp_DeleteInventoryItem.sql" />
+    <Build Include="StoredProcecdures\sp_joinEvent.sql" />
+    <Build Include="StoredProcecdures\sp_joinInventory.sql" />
+    <Build Include="StoredProcecdures\sp_joinItem.sql" />
+    <Build Include="StoredProcecdures\sp_Readct2Category.sql" />
+    <Build Include="StoredProcecdures\sp_Readct2Family.sql" />
+    <Build Include="StoredProcecdures\sp_readct2GeoLocationCity.sql" />
+    <Build Include="StoredProcecdures\sp_readct2GeoLocationState.sql" />
+    <Build Include="StoredProcecdures\sp_Readct2Receipt.sql" />
+    <Build Include="StoredProcecdures\sp_ReadEvent.sql" />
+    <Build Include="StoredProcecdures\sp_ReadInventory.sql" />
+    <Build Include="StoredProcecdures\sp_ReadInventoryItem.sql" />
+    <Build Include="StoredProcecdures\sp_selectct2Company.sql" />
+    <Build Include="StoredProcecdures\sp_selectct2Donation.sql" />
+    <Build Include="StoredProcecdures\sp_selectct2Recipient.sql" />
+    <Build Include="StoredProcecdures\sp_selectct2User.sql" />
+    <Build Include="StoredProcecdures\sp_Updatect2Category.sql" />
+    <Build Include="StoredProcecdures\sp_updatect2Company.sql" />
+    <Build Include="StoredProcecdures\sp_updatect2Donation.sql" />
+    <Build Include="StoredProcecdures\sp_Updatect2Family.sql" />
+    <Build Include="StoredProcecdures\sp_Updatect2Receipt.sql" />
+    <Build Include="StoredProcecdures\sp_updatect2Recipient.sql" />
+    <Build Include="StoredProcecdures\sp_updatect2user.sql" />
+    <Build Include="StoredProcecdures\sp_UpdateEvent.sql" />
+    <Build Include="StoredProcecdures\sp_UpdateInventory.sql" />
+    <Build Include="StoredProcecdures\sp_UpdateInventoryItem.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema\orderOfScripts.txt" />
+  </ItemGroup>
+</Project>
